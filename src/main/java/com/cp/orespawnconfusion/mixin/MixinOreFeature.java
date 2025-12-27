@@ -34,7 +34,7 @@ public class MixinOreFeature {
 					context.getFeature(),
 					context.getWorld(),
 					context.getGenerator(),
-					random,
+					context.getRandom(),
 					newOrigin,
 					context.getConfig()
 			);
