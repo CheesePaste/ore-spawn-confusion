@@ -30,7 +30,7 @@ public class MixinOreFeature {
 			int offsetZ = random.nextInt(ZConfusion) - ZConfusion/2;
 			BlockPos origin = context.getOrigin();
 			BlockPos newOrigin = origin.add(offsetX, offsetY, offsetZ);
-			// 创建一个新的FeatureContext，保持其他部分不变，只替换origin
+			// 创建一个新的FeatureContext
 			return new FeatureContext<>(
 					context.getFeature(),
 					context.getWorld(),
@@ -46,8 +46,7 @@ public class MixinOreFeature {
 	@Unique
 	private boolean isOreGeneration(OreFeatureConfig config) {
 		for (OreFeatureConfig.Target target : config.targets) {
-			Block block = target.state.getBlock();
-			String blockName = block.getTranslationKey().toLowerCase();
+			String blockName = target.state.getBlock().getTranslationKey().toLowerCase();
 			if (blockName.contains("ore") ||
 					blockName.contains("debris") ||
 					blockName.contains("矿") ||

@@ -1,4 +1,3 @@
-// 简化版 ConfigManager.java
 package com.cp.orespawnconfusion;
 
 import com.google.gson.Gson;
