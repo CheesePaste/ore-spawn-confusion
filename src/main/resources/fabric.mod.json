@@ -3,7 +3,7 @@
 	"id": "ore-spawn-confusion",
 	"version": "${version}",
 	"name": "Ore Spawn Confusion",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Giving each ore cluster an independent random offset to avoid seed X-ray.给每个矿簇独立随机偏移来阻止种子反推型矿透",
 	"authors": [
 		"CheesePaste(bilibili:CheesePaste)",
 		"Victory_FX(bilibili:Victory_FX)"
