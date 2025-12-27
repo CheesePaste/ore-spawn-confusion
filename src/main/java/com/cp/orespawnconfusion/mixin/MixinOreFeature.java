@@ -1,6 +1,5 @@
 package com.cp.orespawnconfusion.mixin;
 
-import com.cp.orespawnconfusion.OreSpawnConfusion;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.feature.OreFeature;
@@ -12,6 +11,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
+import static com.cp.orespawnconfusion.OreSpawnConfusion.*;
+
 
 @Mixin(OreFeature.class)
 public class MixinOreFeature {
@@ -21,13 +22,12 @@ public class MixinOreFeature {
 			argsOnly = true
 	)
 	private FeatureContext<OreFeatureConfig> modifyContext(FeatureContext<OreFeatureConfig> context) {
-		if (OreSpawnConfusion.isOpen && isOreGeneration(context.getConfig())) {
+		if (isOpen && isOreGeneration(context.getConfig())) {
 			// 使用纳秒随机数来生成偏移量
 			Random random = Random.create(System.nanoTime());
-			// 水平偏移范围，比如-8到7
-			int offsetX = random.nextInt(16) - 8;
-			int offsetY = random.nextInt(8) - 4;  // 垂直偏移范围-4到3
-			int offsetZ = random.nextInt(16) - 8;
+			int offsetX = random.nextInt(XConfusion) - XConfusion/2;
+			int offsetY = random.nextInt(YConfusion) - YConfusion/2;
+			int offsetZ = random.nextInt(ZConfusion) - ZConfusion/2;
 			BlockPos origin = context.getOrigin();
 			BlockPos newOrigin = origin.add(offsetX, offsetY, offsetZ);
 			// 创建一个新的FeatureContext，保持其他部分不变，只替换origin

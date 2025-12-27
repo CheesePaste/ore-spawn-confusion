@@ -5,13 +5,14 @@
 	"name": "Ore Spawn Confusion",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"CheesePaste(bilibili:CheesePaste)",
+		"Victory_FX(bilibili:Victory_FX)"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/CheesePaste/ore-spawn-confusion",
+		"sources": "https://github.com/CheesePaste/ore-spawn-confusion"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/ore-spawn-confusion/icon.png",
 	"environment": "*",
 	"entrypoints": {
