@@ -51,8 +51,7 @@ public class MixinOreFeature {
 			if (blockName.contains("ore") ||
 					blockName.contains("debris") ||
 					blockName.contains("矿") ||
-					blockName.contains("远古残骸") ||
-					blockName.contains("矿石")) {
+					blockName.contains("远古残骸")) {
 				return true;
 			}
 		}
