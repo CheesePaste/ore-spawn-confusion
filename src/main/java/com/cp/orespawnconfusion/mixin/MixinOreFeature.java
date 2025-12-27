@@ -42,13 +42,9 @@ public class MixinOreFeature {
 
 			if (random == null) {
 				// 如果不存在，创建新的Random并存入Map
-				random=Random.create(System.nanoTime());
+				random = Random.create(System.nanoTime());
 
 				chunkRandomMap.put(chunkKey, random);
-				LOGGER.info("Created new Random for chunk [{}, {}]", chunkX, chunkZ);
-			} else {
-				// 如果已存在，使用存储的Random
-				LOGGER.debug("Using existing Random for chunk [{}, {}]", chunkX, chunkZ);
 			}
 
 			// 使用获取到的Random生成偏移量
