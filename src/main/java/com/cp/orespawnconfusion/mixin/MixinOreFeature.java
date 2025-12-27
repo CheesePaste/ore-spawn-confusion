@@ -4,11 +4,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.feature.OreFeature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+
+import java.util.Random;
 
 import static com.cp.orespawnconfusion.OreSpawnConfusion.*;
 import static com.cp.orespawnconfusion.OreSpawnConfusion.CLEAR_INTERVAL;
@@ -47,7 +48,7 @@ public class MixinOreFeature {
 
 			if (random == null) {
 				// 如果不存在，创建新的Random并存入Map
-				random = Random.create(System.nanoTime());
+				random = new Random(System.nanoTime());
 
 				chunkRandomMap.put(chunkKey, random);
 			}
