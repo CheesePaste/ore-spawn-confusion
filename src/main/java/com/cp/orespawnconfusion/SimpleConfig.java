@@ -32,16 +32,16 @@ public class SimpleConfig {
                 Files.writeString(CONFIG_PATH, defaultJson,
                         StandardOpenOption.CREATE,
                         StandardOpenOption.TRUNCATE_EXISTING);
-                OreSpawnConfusion.LOGGER.info("创建默认配置文件");
+                //OreSpawnConfusion.LOGGER.info("创建默认配置文件");
             } catch (IOException e) {
-                OreSpawnConfusion.LOGGER.error("创建配置文件失败", e);
+                //OreSpawnConfusion.LOGGER.error("创建配置文件失败", e);
             }
         } else {
             try {
                 String json = Files.readString(CONFIG_PATH);
                 config = gson.fromJson(json, Config.class);
             } catch (IOException e) {
-                OreSpawnConfusion.LOGGER.error("读取配置文件失败，使用默认值", e);
+                //OreSpawnConfusion.LOGGER.error("读取配置文件失败，使用默认值", e);
                 config = new Config();
             }
         }

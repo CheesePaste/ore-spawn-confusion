@@ -1,12 +1,10 @@
 package com.cp.orespawnconfusion;
 
 import net.fabricmc.api.ModInitializer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class OreSpawnConfusion implements ModInitializer {
 	public static final String MOD_ID = "ore-spawn-confusion";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	//public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static boolean isOpen = true;
 	public static int XConfusion = 16;
@@ -18,10 +16,10 @@ public class OreSpawnConfusion implements ModInitializer {
 		SimpleConfig.loadAndApply();
 
 		if (isOpen) {
-			LOGGER.info("OreSpawnConfusion 已启用! X:{}, Y:{}, Z:{}",
-					XConfusion, YConfusion, ZConfusion);
+			//LOGGER.info("OreSpawnConfusion 已启用! X:{}, Y:{}, Z:{}",
+					//XConfusion, YConfusion, ZConfusion);
 		} else {
-			LOGGER.info("OreSpawnConfusion 已禁用!");
+			//LOGGER.info("OreSpawnConfusion 已禁用!");
 		}
 	}
 }
